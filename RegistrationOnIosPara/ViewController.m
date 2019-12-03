@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CountOnView"
 //git commit for save
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *groupSelected;
@@ -14,9 +15,13 @@
 @end
 
 @implementation ViewController
-
+int i = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+- (IBAction)counter:(id)sender {
+    i+=i;
+    UITextField *textField.insertText(@"_i");
 }
 
 
