@@ -1,16 +1,13 @@
-//
-//  ViewController.m
-//  RegistrationOnIosPara
-//
-//  Created by Student on 19.11.2019.
-//  Copyright © 2019 Student. All rights reserved.
-//
 
 #import "ViewController.h"
-#import "CountOnView"
+#import "OutputClassCollectionViewController.h"
+
 //git commit for save
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *groupSelected;
+@property (weak, nonatomic) IBOutlet UITextField *counterTF;
+@property (weak, nonatomic) IBOutlet UITextField *nameTF;
+
 
 @end
 
@@ -19,10 +16,23 @@ int i = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-- (IBAction)counter:(id)sender {
-    i+=i;
-    UITextField *textField.insertText(@"_i");
-}
 
+- (IBAction)counter:(id)sender {
+    i += 1;
+    NSString *s = [NSString stringWithFormat:@"%d", i];
+    [_counterTF setText:s];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqual:@"firstSegue"]){
+        OutputClassCollectionViewController *sg = segue.destinationViewController;
+        sg.nameText = _nameTF.text;
+        }
+
+    }
+   
+- (IBAction)registration:(id)sender {
+    
+    
+}
 
 @end
